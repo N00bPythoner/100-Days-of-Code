@@ -1,0 +1,36 @@
+//The project here is to create a 'game' kinda where there are friends, and you test your knowledge of how well you know them.This starts with a basic list of friends.
+// It then asks you for your name and checks to see if it exists in the list, if not, it starts to make a profile on you by asking you questions that are asked in that game.
+// This is very rudementary, but what I have done is gathered input from users, and checked with the user to ensure the answers are correct.
+// I am trying to find a way to loop my code back when the answer is 'no'. For example, if you entered anything besides 'y' on line 22 it will send the user back to line 20!
+// Eventually, I would like to have all the data exported to another doc or database that holds all the user information.
+
+
+username = str(input("Please enter your name: "))
+
+Friends = ["Rachelle", "Brynn", "Sadie", "Wyatt", "McNelly", "Cherbs", "Dillon"]
+
+if username not in Friends: print("You are a new user!")
+
+
+else: print("Welcome back " + username + "!")
+old_user = username
+new_user = username
+if username in Friends: print("Okay " + old_user + " which friend would you like to test your knowledge of? ")
+else: print("Okay " + new_user + " we're going to have to build a profile on you!" )
+favorite_color = input("Alright " + new_user + ", what is your favorite color?")
+print("You said " + favorite_color + " right?")
+color_check = str(input("Please select y or n "))
+y = True
+n = False
+if color_check == str("y"): print("Great! Next Question")
+elif color_check == str("n"): print("Please enter your favorite color")
+else: print("Please choose y or n only!")
+
+character_birthplace = str(input("Where were you born, " + new_user + "?" "\n Please enter city, state"))
+print("Oh, you were born in " + character_birthplace + "?")
+birthplace_check = str(input("Please select y or n "))
+y = True
+n = False
+if birthplace_check == str("y"): print("What a nice place!")
+elif birthplace_check == str("n"): print("Please enter where you were born.")
+else: print("Please choose y or n only!")
